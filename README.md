@@ -27,8 +27,8 @@ mv dependencies.zip ../
 ```bash
 spark-submit --py-files dependencies.zip src/main_etl_pyspark.py -i <input_data_path> -o <output_data_path>
 ```
-Two parameters must be passed to python script: -i for input data path and -o for output data path.
-We used parquet format as input data files. Please set the path of input data in following directories:  
+Two parameters must be passed to the python script: -i for input data path and -o for output data path.
+We used parquet format as input data files. Please set the path of input data in the following directories:  
 ```
 {input_data_path}/evidence/sourceId=eva/
 {input_data_path}/diseases
