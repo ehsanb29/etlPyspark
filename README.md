@@ -14,13 +14,16 @@ PySpark offers a worthy solution for an ETL pipeline deployment. PySpark is able
 ## Scalability
 Apache Spark is a salable bulk synchronous data parallel processing system that scales the distributed application over terabytes of data by moving the computation to the data. Note, Spark platform in addition to use multiple computational workers, have the ability for multi-threading based on the CPU cores at each worker. Horizontal and vertical scaling improve the runtime and scalability, especially in the large datasets.
 
-## Packaging ETL Job Dependencies
+## Packaging project Dependencies
+Libraries use in this etl is lised in requirements.txt. to install them follow instruction:
+```
+pip install -r requirements.txt --target=dependencies
+cd dependencies
+zip -r dependencies.zip *
+mv dependencies.zip ../ 
 
 ## Running the ETL job
 ```bash
-$SPARK_HOME/bin/spark-submit \
---master local[*] \
---py-files packages.zip \
-src/main_etl_pyspark.py
+spark-submit --py-files dependencies.zip src/main_etl_pyspark.py -i <input_data_path> -o <output_data_path>
 ```
 Full details of all possible options can be found [here](http://spark.apache.org/docs/latest/submitting-applications.html). Note, that we have left some options to be defined within the job (which is actually a Spark application) - e.g. `spark.cores.max` and `spark.executor.memory` are defined in the Python script as it is felt that the job should explicitly contain the requests for the required cluster resources.
