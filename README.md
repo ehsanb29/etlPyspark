@@ -38,4 +38,4 @@ Data should put in HDFS file system.
 Full details of all possible options can be found [here](http://spark.apache.org/docs/latest/submitting-applications.html). Note, that we have left some options to be defined within the job (which is actually a Spark application) - e.g. `spark.cores.max` and `spark.executor.memory` are defined in the Python script as it is felt that the job should explicitly contain the requests for the required cluster resources.
 
 ## Outputs
-My sample output files are in Outputs directory 
+The sample output files are in Outputs directory 
