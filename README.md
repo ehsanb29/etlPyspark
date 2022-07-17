@@ -21,6 +21,7 @@ pip install -r requirements.txt --target=dependencies
 cd dependencies
 zip -r dependencies.zip *
 mv dependencies.zip ../ 
+```
 
 ## Running the ETL job
 ```bash
