@@ -29,9 +29,9 @@ spark-submit --py-files dependencies.zip src/main_etl_pyspark.py -i <input_data_
 ```
 Two parameters would be send to python script: -i for input data path and -o for output data path
 *** we use parquet files as input files so input data path should be the path of parquet files.
-{input_data_path}/evidence/sourceId=eva/
-{input_data_path}/diseases
-{input_data_path}/targets
+```{input_data_path}/evidence/sourceId=eva/```
+```{input_data_path}/diseases```
+```{input_data_path}/targets```
 
 Full details of all possible options can be found [here](http://spark.apache.org/docs/latest/submitting-applications.html). Note, that we have left some options to be defined within the job (which is actually a Spark application) - e.g. `spark.cores.max` and `spark.executor.memory` are defined in the Python script as it is felt that the job should explicitly contain the requests for the required cluster resources.
 
