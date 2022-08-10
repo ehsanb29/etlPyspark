@@ -42,7 +42,7 @@ def start_spark():
     conf = SparkConf()
     # conf = SparkConf().getAll()
 
-    conf.set("spark.sql.shuffle.partitions", "400")
+    conf.set("spark.sql.shuffle.partitions", "40")
     spark_context = SparkContext(conf=conf).getOrCreate()
     # spark_context = SparkContext(conf=conf)
     spark_session = SparkSession(spark_context)
